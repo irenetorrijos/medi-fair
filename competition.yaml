@@ -1,0 +1,69 @@
+version: 2
+title: MEDI-FAIR
+description: Recovery of causal direction on pairs of variables.
+image: logo.png
+terms: pages/terms.md
+
+pages:  
+  - title: Overview
+    file: pages/overview.md
+  - title: Data
+    file: pages/data.md
+  - title: Evaluation
+    file: pages/evaluation.md
+  - title: Files
+    file: pages/files.md
+  - title: Terms
+    file: pages/terms.md
+  
+
+phases:
+    - index: 0
+      name: "Development phase"
+      description: "Experiment with pairwise causal recovery methods and develop a strong system"
+      start: 2023-03-07
+      end: 2023-03-28
+      tasks:
+        - 0
+
+    - index: 1
+      name: "Evaluation phase"
+      description: "Evaluate your system on the test set with one final submission"
+      start: 2023-03-29
+      end: 2023-04-19
+      tasks:
+        - 1
+
+tasks:
+    - index: 0
+      name: MEDI-FAIR Development task
+      scoring_program: scoring_program.zip
+      reference_data: reference_valid.zip
+    
+    - index: 1
+      name: MEDI-FAIR Evaluation task
+      scoring_program: scoring_program.zip
+      reference_data: reference_test.zip
+        
+leaderboards:
+    - title: Results
+      key: main
+      columns:
+        - title: Forward AUC
+          index: 0
+          key: forward_auc
+          format: 5f
+          sort: desc
+          default_sort: desc
+        - title: Backward AUC
+          index: 1
+          key: reverse_auc
+          format: 5f
+          sort: desc
+          default_sort: desc
+        - title: Score
+          index: 2
+          key: score
+          format: 5f
+          sort: desc
+          default_sort: desc
