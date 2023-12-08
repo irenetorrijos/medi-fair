@@ -1,0 +1,1 @@
+command: python $program/causality.py $input $output
